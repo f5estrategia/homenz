@@ -1,0 +1,1381 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Protocolo Médico de Emagrecimento | Homenz Araquari</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+:root {
+  --azul:       #004B9D;
+  --azul-medio: #00408a;
+  --azul-claro: #0057b8;
+  --creme:      #f0fffe;
+  --creme-2:    #e6f7f7;
+  --branco:     #ffffff;
+  --texto:      #004B9D;
+  --texto-sub:  #2a4a70;
+  --texto-muted:#6b8ab0;
+  --accent:     #00C1B6;
+  --accent-dk:  #009e94;
+  --borda:      #E6E6E6;
+  --borda-azul: rgba(0,75,157,0.12);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--branco);
+  color: var(--texto);
+  overflow-x: hidden;
+}
+
+/* NAV */
+.nav {
+  position: fixed;
+  top:0; left:0; right:0;
+  z-index:900;
+  background: var(--branco);
+  border-bottom: 1px solid var(--borda);
+  padding: 0 48px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 16px rgba(0,75,157,0.06);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.logo-mark {
+  width: 42px; height: 42px;
+  background: var(--azul);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--branco);
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.logo-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--azul);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.nav-cta {
+  background: var(--azul);
+  color: var(--branco);
+  border: none;
+  padding: 12px 28px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  cursor: pointer;
+  border-radius: 3px;
+  text-transform: uppercase;
+  transition: all .22s;
+}
+.nav-cta:hover { background: var(--azul-claro); transform:translateY(-1px); }
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  padding-top: 72px;
+  background: var(--creme);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 60px;
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 60px;
+  align-items: center;
+  min-height: calc(100vh - 72px);
+}
+
+.hero-esq {
+  display: flex;
+  align-items: center;
+}
+
+.hero-esq-inner { max-width: 520px; }
+
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 24px;
+}
+.kicker::before {
+  content:'';
+  display:block;
+  width:28px; height:2px;
+  background: var(--accent);
+}
+
+.hero-h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(36px, 4.5vw, 60px);
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--azul);
+  margin-bottom: 28px;
+  letter-spacing: -0.2px;
+}
+
+.hero-h1 em {
+  font-style: normal;
+  font-weight: 800;
+  color: var(--accent);
+}
+
+.hero-sub {
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--texto-sub);
+  margin-bottom: 40px;
+  font-weight: 400;
+}
+
+.bullets {
+  list-style: none;
+  margin-bottom: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.bullets li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 15px;
+  color: var(--texto-sub);
+  font-weight: 500;
+}
+.bullets li .chk {
+  width: 22px; height: 22px;
+  min-width: 22px;
+  border-radius: 50%;
+  background: var(--azul);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--branco);
+  font-size: 10px;
+}
+
+.btn-primary {
+  display: inline-block;
+  background: var(--azul);
+  color: var(--branco);
+  padding: 18px 48px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+  text-decoration: none;
+  transition: all .22s;
+}
+.btn-primary:hover { background: var(--azul-claro); transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,75,157,0.25); }
+
+/* hero card form */
+.hero-dir {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-dir::before { display: none; }
+
+.form-card {
+  background: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: 16px;
+  padding: 44px 40px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 8px 40px rgba(0,75,157,0.10);
+}
+
+.form-card::before {
+  content:'';
+  position:absolute;
+  top:0; left:0; right:0;
+  height:4px;
+  background: linear-gradient(90deg, var(--azul), var(--accent));
+  border-radius: 16px 16px 0 0;
+}
+
+.form-card h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--azul);
+  margin-bottom: 6px;
+  text-align: center;
+}
+.form-card .sub {
+  font-size: 13px;
+  color: var(--texto-muted);
+  text-align: center;
+  margin-bottom: 28px;
+  line-height: 1.5;
+}
+
+.fg { margin-bottom: 14px; }
+.fg label {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--texto-muted);
+  margin-bottom: 7px;
+}
+.fg input {
+  width:100%;
+  background: var(--creme);
+  border: 1px solid var(--borda);
+  color: var(--azul);
+  padding: 13px 16px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  border-radius: 6px;
+  outline: none;
+  transition: all .2s;
+}
+.fg input:focus { border-color: var(--azul); background: var(--branco); }
+.fg input::placeholder { color: #bbc5d0; }
+
+.btn-form-card {
+  width: 100%;
+  background: var(--accent);
+  color: var(--azul);
+  border: none;
+  padding: 15px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 6px;
+  transition: all .22s;
+}
+.btn-form-card:hover { background: #00a89e; transform:translateY(-1px); }
+
+.form-disc {
+  font-size: 11.5px;
+  color: var(--texto-muted);
+  text-align: center;
+  margin-top: 14px;
+  line-height: 1.5;
+}
+
+/* SECOES */
+.secao { padding: 100px 80px; }
+.secao.bg-creme  { background: var(--creme); }
+.secao.bg-branco { background: var(--branco); }
+.secao.bg-azul   { background: var(--azul); color: var(--branco); }
+.secao.bg-creme2 { background: var(--creme-2); }
+
+.container { max-width: 1100px; margin: 0 auto; }
+
+.secao-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+.secao-kicker::before {
+  content:'';
+  display:block;
+  width:20px; height:2px;
+  background: var(--accent);
+}
+
+.secao-h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(32px, 3.5vw, 50px);
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--azul);
+  margin-bottom: 24px;
+  letter-spacing: -0.2px;
+}
+.secao-h2.inv { color: var(--branco); }
+
+.secao-p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--texto-sub);
+  margin-bottom: 20px;
+}
+.secao-p.inv { color: rgba(255,255,255,0.72); }
+
+/* DOR */
+.dor-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.dor-img-wrap {
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 3/4;
+  line-height: 0;
+}
+
+.dor-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+/* APRESENTAÇÃO */
+.apres-centro {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.tag-pill {
+  display: inline-block;
+  margin-top: 36px;
+  background: var(--azul);
+  color: var(--branco);
+  padding: 10px 24px;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
+
+/* COMO FUNCIONA */
+.etapas {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 24px;
+  margin-top: 60px;
+}
+
+.etapa {
+  background: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  padding: 36px 28px;
+  text-align: center;
+  transition: all .25s;
+  position: relative;
+  overflow: hidden;
+}
+.etapa::after {
+  content:'';
+  position:absolute;
+  bottom:0; left:0; right:0;
+  height:3px;
+  background: var(--azul);
+  transform: scaleX(0);
+  transition: transform .25s;
+}
+.etapa:hover { transform:translateY(-6px); box-shadow:0 16px 40px rgba(0,75,157,0.12); border-color:var(--azul); }
+.etapa:hover::after { transform: scaleX(1); }
+
+.etapa-num {
+  width: 52px; height: 52px;
+  background: var(--azul);
+  color: var(--branco);
+  border-radius: 50%;
+  font-family: 'Poppins', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.etapa-nome {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--azul);
+  margin-bottom: 10px;
+}
+.etapa-desc {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--texto-muted);
+}
+
+/* AUTORIDADE */
+.auto-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.stat-box {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 12px;
+  padding: 44px 40px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.stat-box::before {
+  content:'';
+  position:absolute;
+  top:0; left:0; right:0;
+  height:3px;
+  background: linear-gradient(90deg, var(--accent), #00a89e);
+  border-radius: 12px 12px 0 0;
+}
+
+.chart-label-top {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.chart-wrap {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 32px;
+  height: 200px;
+  padding: 0 16px;
+}
+
+.chart-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  max-width: 130px;
+  height: 100%;
+}
+
+.chart-bar-wrap {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+}
+
+.chart-value-tag {
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 8px;
+}
+.chart-value-tag.accent-tag {
+  color: var(--accent);
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.chart-bar {
+  width: 100%;
+  border-radius: 6px 6px 0 0;
+  height: var(--h);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 10px;
+  position: relative;
+  transform-origin: bottom;
+  animation: growBar 1.2s cubic-bezier(.22,1,.36,1) both;
+}
+
+@keyframes growBar {
+  from { transform: scaleY(0); opacity: 0; }
+  to   { transform: scaleY(1); opacity: 1; }
+}
+
+.bar-base  { background: rgba(255,255,255,0.18); animation-delay: .1s; }
+.bar-accent { background: linear-gradient(180deg, var(--accent), #009e94); animation-delay: .3s; }
+
+.bar-pct {
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.7);
+}
+.bar-accent .bar-pct { color: var(--azul); }
+
+.chart-col-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.55);
+  text-align: center;
+  line-height: 1.4;
+}
+
+.chart-destaque {
+  margin-top: 28px;
+  background: rgba(0,193,182,0.12);
+  border: 1px solid rgba(0,193,182,0.25);
+  border-radius: 8px;
+  padding: 16px 20px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.8);
+  text-align: center;
+  line-height: 1.5;
+}
+.chart-destaque strong { color: var(--accent); font-weight: 700; }
+
+.btn-outline-inv {
+  display: inline-block;
+  border: 1.5px solid rgba(255,255,255,0.35);
+  color: var(--branco);
+  padding: 13px 34px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all .22s;
+  border-radius: 3px;
+  margin-top: 12px;
+  background: transparent;
+  font-family: 'Poppins', sans-serif;
+}
+.btn-outline-inv:hover { background: rgba(255,255,255,0.1); border-color: var(--branco); }
+
+.disclaimer-xs {
+  font-size: 11px;
+  color: rgba(255,255,255,0.3);
+  margin-top: 14px;
+  line-height: 1.5;
+}
+
+/* INDICAÇÕES */
+.indic-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.indic-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.indic-list li {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 22px;
+  background: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  font-size: 15px;
+  color: var(--texto-sub);
+  font-weight: 500;
+  transition: all .2s;
+}
+.indic-list li:hover { border-color: var(--azul); color: var(--azul); box-shadow:0 4px 16px rgba(0,75,157,0.08); }
+.indic-list li .ico {
+  width: 30px; height: 30px;
+  min-width: 30px;
+  background: var(--azul);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--branco);
+  font-size: 12px;
+}
+
+/* SOBRE */
+.sobre-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.sobre-img {
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 3/4;
+  line-height: 0;
+}
+
+.sobre-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+}
+
+.sobre-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 32px;
+}
+.badge {
+  background: var(--creme);
+  border: 1px solid var(--borda);
+  border-radius: 100px;
+  padding: 7px 18px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--azul);
+}
+
+/* FAQ */
+.faq-wrap {
+  max-width: 780px;
+  margin: 50px auto 0;
+}
+
+.faq-item { border-bottom: 1px solid var(--borda); }
+.faq-btn {
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 24px 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--azul);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  transition: color .2s;
+}
+.faq-btn:hover { color: var(--accent-dk); }
+
+.faq-icon {
+  width: 28px; height: 28px;
+  min-width: 28px;
+  border: 1.5px solid var(--borda-azul);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  color: var(--azul);
+  transition: all .25s;
+}
+.faq-item.open .faq-icon { background: var(--azul); color: var(--branco); border-color: var(--azul); transform: rotate(45deg); }
+
+.faq-resp {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .35s ease, padding .3s;
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--texto-sub);
+}
+.faq-item.open .faq-resp { max-height: 200px; padding-bottom: 22px; }
+
+/* CTA FINAL */
+.cta-final {
+  background: var(--azul);
+  padding: 100px 80px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta-final::before {
+  content:'';
+  position:absolute;
+  inset:0;
+  background: radial-gradient(ellipse 50% 70% at 50% 50%, rgba(0,193,182,0.07) 0%, transparent 70%);
+}
+.cta-final .container { position:relative; z-index:1; }
+.cta-final .secao-h2 { color: var(--branco); max-width:680px; margin:0 auto 16px; }
+
+.cta-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 420px;
+  margin: 0 auto;
+}
+.cta-form input {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: var(--branco);
+  padding: 15px 20px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  border-radius: 6px;
+  outline: none;
+  text-align: center;
+  transition: all .2s;
+}
+.cta-form input:focus { border-color: var(--accent); }
+.cta-form input::placeholder { color: rgba(255,255,255,0.3); }
+
+.btn-accent {
+  background: var(--accent);
+  color: var(--azul);
+  border: none;
+  padding: 17px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all .22s;
+}
+.btn-accent:hover { background: #00a89e; transform:translateY(-1px); }
+
+/* FOOTER */
+footer {
+  background: #002060;
+  padding: 44px 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.footer-logo {
+  font-family: 'Poppins', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--branco);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+.footer-logo span { color: var(--accent); }
+.footer-info { font-size: 12px; color: rgba(255,255,255,0.3); }
+
+/* POPUP */
+.popup-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,35,80,0.8);
+  backdrop-filter: blur(6px);
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.popup-overlay.on { display: flex; }
+
+.popup {
+  background: var(--branco);
+  border-radius: 14px;
+  padding: 52px 48px;
+  max-width: 440px;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.3);
+}
+.popup::before {
+  content:'';
+  position:absolute;
+  top:0; left:0; right:0;
+  height:4px;
+  background: linear-gradient(90deg, var(--azul), var(--azul-claro));
+  border-radius: 14px 14px 0 0;
+}
+.popup-close {
+  position:absolute; top:16px; right:16px;
+  width:32px; height:32px;
+  background: var(--creme);
+  border: 1px solid var(--borda);
+  border-radius:50%;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:13px;
+  color: var(--texto-sub);
+  transition: all .2s;
+  font-family:inherit;
+}
+.popup-close:hover { background: var(--azul); color: var(--branco); }
+
+.popup h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--azul);
+  margin-bottom: 6px;
+  text-align: center;
+}
+.popup .psub {
+  font-size: 13px;
+  color: var(--texto-muted);
+  text-align: center;
+  margin-bottom: 28px;
+  line-height: 1.5;
+}
+.popup .fg label { color: var(--texto-muted); font-size:11px; font-weight:600; letter-spacing:1.2px; text-transform:uppercase; margin-bottom:7px; display:block; }
+.popup .fg input {
+  background: var(--creme);
+  border: 1px solid var(--borda);
+  color: var(--azul);
+  padding: 14px 16px;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  border-radius: 6px;
+  outline: none;
+  transition: all .2s;
+}
+.popup .fg input:focus { border-color: var(--azul); background: var(--branco); }
+.popup .fg input::placeholder { color: var(--borda); }
+.popup .btn-form-pop {
+  width:100%;
+  background: var(--azul);
+  color: var(--branco);
+  border: none;
+  padding: 15px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 6px;
+  transition: all .22s;
+}
+.popup .btn-form-pop:hover { background: var(--azul-claro); }
+.popup .form-disc { font-size: 11.5px; color: var(--texto-muted); text-align:center; margin-top:14px; line-height:1.5; }
+
+/* ── ANIMAÇÕES DE SCROLL ── */
+
+/* Estado inicial — elementos invisíveis antes de entrar na tela */
+[data-ani] {
+  opacity: 0;
+  transition-duration: .75s;
+  transition-timing-function: cubic-bezier(.22,1,.36,1);
+  transition-property: opacity, transform, filter;
+}
+[data-ani="fade-up"]    { transform: translateY(40px); }
+[data-ani="fade-down"]  { transform: translateY(-30px); }
+[data-ani="fade-left"]  { transform: translateX(-50px); }
+[data-ani="fade-right"] { transform: translateX(50px); }
+[data-ani="scale-up"]   { transform: scale(0.88); }
+[data-ani="blur-in"]    { transform: translateY(24px); filter: blur(8px); }
+
+/* Estado visível */
+[data-ani].visible {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+/* Delays escalonados */
+[data-delay="100"] { transition-delay: .1s; }
+[data-delay="200"] { transition-delay: .2s; }
+[data-delay="300"] { transition-delay: .3s; }
+[data-delay="400"] { transition-delay: .4s; }
+[data-delay="500"] { transition-delay: .5s; }
+[data-delay="600"] { transition-delay: .6s; }
+
+/* Nav scroll effect */
+.nav.scrolled {
+  box-shadow: 0 4px 24px rgba(0,75,157,0.12);
+  background: rgba(255,255,255,0.97);
+  backdrop-filter: blur(12px);
+}
+
+/* Hover refinements */
+.etapa       { transition: transform .3s cubic-bezier(.22,1,.36,1), box-shadow .3s, border-color .3s; }
+.indic-list li { transition: transform .25s cubic-bezier(.22,1,.36,1), border-color .25s, box-shadow .25s, color .25s; }
+.indic-list li:hover { transform: translateX(6px); }
+.faq-item    { transition: background .2s; }
+.faq-item.open { background: rgba(0,75,157,0.03); border-radius: 8px; }
+
+/* Linha decorativa animada nos kickers */
+.secao-kicker::before,
+.kicker::before {
+  transition: width .6s cubic-bezier(.22,1,.36,1);
+}
+[data-ani].visible .secao-kicker::before,
+[data-ani].visible .kicker::before { width: 20px; }
+[data-ani]:not(.visible) .secao-kicker::before,
+[data-ani]:not(.visible) .kicker::before { width: 0; }
+
+/* CTA button pulse */
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+}
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.15);
+  transform: translateX(-100%);
+  transition: transform .4s ease;
+}
+.btn-primary:hover::after { transform: translateX(0); }
+
+/* Form card entrance */
+.form-card {
+  transition: box-shadow .3s;
+}
+.form-card:hover {
+  box-shadow: 0 16px 60px rgba(0,75,157,0.18);
+}
+
+/* Smooth underline on nav CTA */
+.nav-cta { position: relative; overflow: hidden; }
+.nav-cta::after {
+  content:'';
+  position:absolute;
+  bottom:0; left:0; right:0;
+  height:2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transition: transform .3s;
+}
+.nav-cta:hover::after { transform: scaleX(1); }
+
+
+@media(max-width:1024px){
+  .hero-inner { grid-template-columns:1fr; padding: 60px 40px; gap: 40px; min-height:auto; }
+  .secao { padding: 80px 40px; }
+  .dor-grid, .auto-grid, .indic-grid, .sobre-grid { grid-template-columns:1fr; gap:48px; }
+  .etapas { grid-template-columns: repeat(2,1fr); }
+  footer { padding: 36px 40px; flex-direction:column; align-items:flex-start; }
+}
+@media(max-width:600px){
+  .nav { padding:0 20px; }
+  .hero-inner { padding: 40px 24px; }
+  .secao { padding: 60px 24px; }
+  .etapas { grid-template-columns:1fr; }
+  .cta-final { padding: 70px 24px; }
+  .popup { padding: 40px 28px; }
+  footer { padding: 28px 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="#" class="nav-logo">
+    <img src="https://homenz.com.br/wp-content/uploads/2023/11/logo-Grande-300x91.png" alt="Homenz" style="height:44px;width:auto;">
+  </a>
+  <button class="nav-cta" onclick="abrirPopup()">Agendar Avaliação</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-esq">
+      <div class="hero-esq-inner">
+        <div class="kicker" data-ani="fade-up">Protocolo Médico Exclusivo</div>
+        <h1 class="hero-h1" data-ani="fade-up" data-delay="100">Emagreça com <em>acompanhamento médico</em> e protocolo avançado para perda de peso</h1>
+        <p class="hero-sub" data-ani="fade-up" data-delay="200">Tratamento personalizado com avaliação médica completa e acompanhamento profissional para ajudar você a emagrecer com segurança e resultados sustentáveis.</p>
+        <ul class="bullets" data-ani="fade-up" data-delay="300">
+          <li><span class="chk"><i class="fas fa-check"></i></span> Avaliação médica individual</li>
+          <li><span class="chk"><i class="fas fa-check"></i></span> Protocolo personalizado para seu metabolismo</li>
+          <li><span class="chk"><i class="fas fa-check"></i></span> Acompanhamento durante todo o tratamento</li>
+          <li><span class="chk"><i class="fas fa-check"></i></span> Estratégia focada em resultados duradouros</li>
+        </ul>
+        <button class="btn-primary" data-ani="fade-up" data-delay="400" onclick="abrirPopup()">Agendar avaliação</button>
+      </div>
+    </div>
+
+    <div class="hero-dir">
+      <div class="form-card" data-ani="fade-left" data-delay="200">
+        <h2>Agende sua avaliação</h2>
+        <p class="sub">Preencha seus dados — nossa equipe entra em contato para explicar o tratamento.</p>
+        <div class="fg">
+          <label>Nome completo</label>
+          <input type="text" id="h-nome" placeholder="Seu nome">
+        </div>
+        <div class="fg">
+          <label>WhatsApp</label>
+          <input type="tel" id="h-whats" placeholder="(00) 00000-0000">
+        </div>
+        <button class="btn-form-card" onclick="enviarHero()">Quero iniciar meu tratamento</button>
+        <p class="form-disc">Nossa equipe entrará em contato para explicar o tratamento e agendar sua avaliação.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOR -->
+<section class="secao bg-creme" style="background:#F2F2F2!important;">
+  <div class="container">
+    <div class="dor-grid">
+      <div class="dor-img-wrap" data-ani="fade-right">
+        <img src="https://twshnrvhfoeqdusdhxjo.supabase.co/storage/v1/object/public/midias%20fernendas/homenz/Emagrecer.png" alt="Emagrecimento com acompanhamento médico">
+      </div>
+      <div data-ani="fade-left" data-delay="150">
+        <div class="secao-kicker">Entendemos sua situação</div>
+        <h2 class="secao-h2">Você já tentou emagrecer e não conseguiu manter os resultados?</h2>
+        <p class="secao-p">Muitas pessoas tentam dietas, exercícios ou diversos métodos de emagrecimento e acabam recuperando o peso pouco tempo depois.</p>
+        <p class="secao-p">Isso acontece porque o processo de emagrecimento envolve diversos fatores como metabolismo, hábitos, hormônios e estilo de vida.</p>
+        <p class="secao-p">Por isso, cada paciente precisa de uma abordagem personalizada e acompanhamento profissional adequado.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APRESENTAÇÃO -->
+<section class="secao bg-branco" style="text-align:center;">
+  <div class="container">
+    <div class="apres-centro">
+      <div class="secao-kicker" data-ani="fade-up">Nossa abordagem</div>
+      <h2 class="secao-h2" data-ani="fade-up" data-delay="100">Um protocolo médico estruturado para ajudar você a emagrecer</h2>
+      <p class="secao-p" data-ani="fade-up" data-delay="200">O tratamento é realizado através de um protocolo médico personalizado, desenvolvido após uma avaliação completa do paciente.</p>
+      <p class="secao-p" data-ani="fade-up" data-delay="300">Esse protocolo pode envolver diferentes estratégias utilizadas no tratamento da obesidade, sempre definidas com base nas necessidades individuais de cada pessoa.</p>
+      <p class="secao-p" data-ani="fade-up" data-delay="400">O objetivo é promover perda de peso com segurança e acompanhamento profissional durante todo o processo.</p>
+      <div data-ani="scale-up" data-delay="500">
+        <span class="tag-pill">Avaliação individual</span>
+        <span class="tag-pill">Acompanhamento contínuo</span>
+        <span class="tag-pill">Resultados sustentáveis</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section class="secao bg-creme2" style="text-align:center;">
+  <div class="container">
+    <div class="secao-kicker" data-ani="fade-up">Passo a passo</div>
+    <h2 class="secao-h2" data-ani="fade-up" data-delay="100">Como funciona o processo</h2>
+    <div class="etapas">
+      <div class="etapa" data-ani="fade-up" data-delay="100">
+        <div class="etapa-num">1</div>
+        <div class="etapa-nome">Avaliação médica</div>
+        <div class="etapa-desc">Análise do histórico de saúde, hábitos e objetivos do paciente.</div>
+      </div>
+      <div class="etapa" data-ani="fade-up" data-delay="200">
+        <div class="etapa-num">2</div>
+        <div class="etapa-nome">Plano personalizado</div>
+        <div class="etapa-desc">Definição de um protocolo adequado para o perfil metabólico.</div>
+      </div>
+      <div class="etapa" data-ani="fade-up" data-delay="300">
+        <div class="etapa-num">3</div>
+        <div class="etapa-nome">Início do tratamento</div>
+        <div class="etapa-desc">Acompanhamento profissional durante todo o processo.</div>
+      </div>
+      <div class="etapa" data-ani="fade-up" data-delay="400">
+        <div class="etapa-num">4</div>
+        <div class="etapa-nome">Monitoramento</div>
+        <div class="etapa-desc">Acompanhamento contínuo para evolução segura e sustentável.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AUTORIDADE -->
+<section class="secao bg-azul">
+  <div class="container">
+    <div class="auto-grid">
+      <div class="stat-box" data-ani="fade-right">
+        <div class="chart-label-top">Eficácia na perda de peso</div>
+
+        <div class="chart-wrap">
+          <!-- Barra 1: só medicação -->
+          <div class="chart-col">
+            <div class="chart-bar-wrap">
+              <div class="chart-value-tag">100%</div>
+              <div class="chart-bar bar-base" style="--h:46%">
+                <span class="bar-pct">Referência</span>
+              </div>
+            </div>
+            <div class="chart-col-label">Apenas<br>medicação</div>
+          </div>
+
+          <!-- Barra 2: com acompanhamento -->
+          <div class="chart-col">
+            <div class="chart-bar-wrap">
+              <div class="chart-value-tag accent-tag">+54%</div>
+              <div class="chart-bar bar-accent" style="--h:86%">
+                <span class="bar-pct">154%</span>
+              </div>
+            </div>
+            <div class="chart-col-label">Com protocolo<br>médico</div>
+          </div>
+        </div>
+
+        <div class="chart-destaque">
+          Até <strong>54% mais eficaz</strong> do que apenas utilizar medicação isolada
+        </div>
+      </div>
+      <div data-ani="fade-left" data-delay="150">
+        <div class="secao-kicker">Resultados com base científica</div>
+        <h2 class="secao-h2 inv">Resultados mais consistentes com acompanhamento médico</h2>
+        <p class="secao-p inv">Quando o tratamento para perda de peso é realizado com acompanhamento médico e estratégia personalizada, os resultados tendem a ser mais consistentes ao longo do tempo.</p>
+        <p class="secao-p inv">O protocolo combina avaliação clínica, orientação profissional e estratégias específicas para cada paciente.</p>
+        <p class="secao-p inv">Essa abordagem permite potencializar os efeitos do tratamento enquanto cria hábitos que ajudam a manter os resultados no longo prazo.</p>
+        <button class="btn-outline-inv" onclick="abrirPopup()">Quero saber mais</button>
+        <p class="disclaimer-xs">Resultados podem variar de acordo com cada paciente. O tratamento adequado será definido após avaliação médica.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INDICAÇÕES -->
+<section class="secao bg-creme">
+  <div class="container">
+    <div class="indic-grid">
+      <div data-ani="fade-right">
+        <div class="secao-kicker">Indicações</div>
+        <h2 class="secao-h2">Para quem esse tratamento é indicado</h2>
+        <p class="secao-p">Se você se identifica com algum dos perfis abaixo, esse protocolo pode ser a solução que você estava buscando.</p>
+      </div>
+      <ul class="indic-list">
+        <li data-ani="fade-left" data-delay="100"><span class="ico"><i class="fas fa-check"></i></span> Pessoas com dificuldade para perder peso</li>
+        <li data-ani="fade-left" data-delay="200"><span class="ico"><i class="fas fa-check"></i></span> Quem já tentou dietas sem sucesso</li>
+        <li data-ani="fade-left" data-delay="300"><span class="ico"><i class="fas fa-check"></i></span> Pacientes que desejam acompanhamento médico</li>
+        <li data-ani="fade-left" data-delay="400"><span class="ico"><i class="fas fa-check"></i></span> Pessoas que buscam um método estruturado para emagrecer</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section class="secao bg-branco">
+  <div class="container">
+    <div class="sobre-grid">
+      <div class="sobre-img" data-ani="fade-right">
+        <img src="https://twshnrvhfoeqdusdhxjo.supabase.co/storage/v1/object/public/midias%20fernendas/homenz/homemconversandocommedico.jpg" alt="Consulta médica Homenz">
+      </div>
+      <div data-ani="fade-left" data-delay="150">
+        <div class="secao-kicker">Nossos profissionais</div>
+        <h2 class="secao-h2">Tratamento conduzido por profissionais qualificados</h2>
+        <p class="secao-p">O acompanhamento é realizado por profissionais capacitados que avaliam cada paciente de forma individual.</p>
+        <p class="secao-p">O objetivo é garantir um tratamento seguro, estruturado e adequado às necessidades de cada pessoa.</p>
+        <p class="secao-p">Cada etapa do processo é acompanhada de perto para garantir evolução saudável e sustentável.</p>
+        <div class="sobre-badges" data-ani="fade-up" data-delay="300">
+          <span class="badge">Avaliação Individual</span>
+          <span class="badge">Protocolo Médico</span>
+          <span class="badge">Segurança Clínica</span>
+          <span class="badge">Araquari / SC</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="secao bg-creme2" style="text-align:center;">
+  <div class="container">
+    <div class="secao-kicker" data-ani="fade-up">Tire suas dúvidas</div>
+    <h2 class="secao-h2" data-ani="fade-up" data-delay="100">Perguntas frequentes</h2>
+    <div class="faq-wrap" style="text-align:left;">
+      <div class="faq-item" data-ani="fade-up" data-delay="100">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          Preciso passar por avaliação antes de iniciar o tratamento?
+          <span class="faq-icon"><i class="fas fa-plus"></i></span>
+        </button>
+        <div class="faq-resp">Sim. A avaliação médica é essencial para entender o histórico de saúde e definir o melhor protocolo para cada paciente.</div>
+      </div>
+      <div class="faq-item" data-ani="fade-up" data-delay="200">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          O tratamento é seguro?
+          <span class="faq-icon"><i class="fas fa-plus"></i></span>
+        </button>
+        <div class="faq-resp">Sim. Todo o processo é conduzido com acompanhamento profissional e avaliação individual, garantindo a segurança de cada etapa.</div>
+      </div>
+      <div class="faq-item" data-ani="fade-up" data-delay="300">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          Quanto tempo dura o tratamento?
+          <span class="faq-icon"><i class="fas fa-plus"></i></span>
+        </button>
+        <div class="faq-resp">O tempo pode variar de acordo com o objetivo e a resposta do organismo de cada paciente. Após a avaliação, o médico indicará uma estimativa personalizada.</div>
+      </div>
+      <div class="faq-item" data-ani="fade-up" data-delay="400">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          O tratamento é indicado para qualquer pessoa?
+          <span class="faq-icon"><i class="fas fa-plus"></i></span>
+        </button>
+        <div class="faq-resp">Cada caso precisa ser avaliado individualmente para verificar se o tratamento é adequado. A consulta de avaliação é o primeiro e mais importante passo.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final">
+  <div class="container">
+    <div class="secao-kicker" style="justify-content:center;" data-ani="fade-up">Comece agora</div>
+    <h2 class="secao-h2 inv" data-ani="fade-up" data-delay="100">Comece agora sua jornada de emagrecimento com acompanhamento profissional</h2>
+    <p class="secao-p inv" data-ani="fade-up" data-delay="200" style="max-width:480px;margin:0 auto 48px;">Agende sua avaliação e descubra qual é o protocolo mais indicado para você.</p>
+    <div class="cta-form" data-ani="scale-up" data-delay="300">
+      <input type="text" id="f-nome" placeholder="Seu nome completo">
+      <input type="tel" id="f-whats" placeholder="Seu WhatsApp com DDD">
+      <button class="btn-accent" onclick="enviarFinal()">Agendar avaliação</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <img src="https://homenz.com.br/wp-content/uploads/2023/11/logo-Grande-300x91.png" alt="Homenz" style="height:40px;width:auto;filter:brightness(0) invert(1);">
+  <div class="footer-info">© 2026 Homenz Araquari. Todos os direitos reservados.</div>
+</footer>
+
+<!-- POPUP -->
+<div class="popup-overlay" id="popup" onclick="fecharExt(event)">
+  <div class="popup">
+    <button class="popup-close" onclick="fecharPopup()">✕</button>
+    <h3>Agende sua avaliação</h3>
+    <p class="psub">Preencha seus dados e nossa equipe entrará em contato para explicar o tratamento e agendar sua avaliação.</p>
+    <div class="fg">
+      <label>Nome completo</label>
+      <input type="text" id="p-nome" placeholder="Seu nome">
+    </div>
+    <div class="fg">
+      <label>WhatsApp</label>
+      <input type="tel" id="p-whats" placeholder="(00) 00000-0000">
+    </div>
+    <button class="btn-form-pop" onclick="enviarPopup()">Quero iniciar meu tratamento</button>
+    <p class="form-disc">Nossa equipe entrará em contato para explicar o tratamento e agendar sua avaliação.</p>
+  </div>
+</div>
+
+<script>
+function abrirPopup() {
+  document.getElementById('popup').classList.add('on');
+  document.body.style.overflow = 'hidden';
+}
+function fecharPopup() {
+  document.getElementById('popup').classList.remove('on');
+  document.body.style.overflow = '';
+}
+function fecharExt(e) { if(e.target===document.getElementById('popup')) fecharPopup(); }
+
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const open = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(el=>el.classList.remove('open'));
+  if(!open) item.classList.add('open');
+}
+
+function enviarHero() {
+  const n = document.getElementById('h-nome').value.trim();
+  const w = document.getElementById('h-whats').value.trim();
+  if(!n||!w){ alert('Preencha todos os campos.'); return; }
+  const btn = event.target;
+  btn.textContent = '✓ Enviado! Aguarde nosso contato.';
+  btn.style.background = '#4caf7d';
+  btn.style.color = '#1a2744';
+  btn.disabled = true;
+}
+function enviarPopup() {
+  const n = document.getElementById('p-nome').value.trim();
+  const w = document.getElementById('p-whats').value.trim();
+  if(!n||!w){ alert('Preencha todos os campos.'); return; }
+  fecharPopup();
+  alert('Obrigado, '+n+'! Nossa equipe entrará em contato em breve.');
+}
+// ── SCROLL ANIMATIONS ──
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      // Reativar animação do gráfico quando entrar na tela
+      if (entry.target.classList.contains('stat-box')) {
+        entry.target.querySelectorAll('.chart-bar').forEach(bar => {
+          bar.style.animation = 'none';
+          bar.offsetHeight; // reflow
+          bar.style.animation = '';
+        });
+      }
+      observer.unobserve(entry.target);
+    }
+  });
+}, {
+  threshold: 0.12,
+  rootMargin: '0px 0px -40px 0px'
+});
+
+document.querySelectorAll('[data-ani]').forEach(el => observer.observe(el));
+
+// Ativar elementos do hero imediatamente (já visíveis)
+setTimeout(() => {
+  document.querySelectorAll('.hero [data-ani]').forEach((el, i) => {
+    setTimeout(() => el.classList.add('visible'), i * 80);
+  });
+}, 100);
+
+// ── NAV SCROLL EFFECT ──
+const nav = document.querySelector('.nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+}, { passive: true });
+
+function enviarFinal() {
+  const n = document.getElementById('f-nome').value.trim();
+  const w = document.getElementById('f-whats').value.trim();
+  if(!n||!w){ alert('Preencha todos os campos.'); return; }
+  const btn = event.target;
+  btn.textContent = '✓ Enviado! Aguarde nosso contato.';
+  btn.style.background = '#4caf7d';
+  btn.disabled = true;
+}
+</script>
+</body>
+</html>
